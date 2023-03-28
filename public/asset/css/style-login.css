@@ -1,0 +1,9 @@
+body {
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+.ukm-fun {
+    padding-top: 100px;
+}
