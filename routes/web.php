@@ -26,6 +26,9 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/', [AuthController::class, 'index'])->name('/');
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
+Route::group(['middleware' => ['auth', 'CekRole:mahasiswa,ukm']], function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
 
 // TELUTIZEN VIEW
 Route::group(['middleware' => ['auth', 'CekRole:mahasiswa']], function () {
