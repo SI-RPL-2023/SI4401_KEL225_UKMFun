@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { 
         // TELUTIZEN
         DB::table('users')->insert([
             'nama' => 'Muhammad Ayyub Ramli',
