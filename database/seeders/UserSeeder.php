@@ -40,12 +40,45 @@ class UserSeeder extends Seeder
         ]);
         
         DB::table('users')->insert([
-            'nama' => 'Ari Dwi Setyawan',
-            'nim' => 1202200150,
+            'nama' => 'Dimas Pahlevi',
+            'nim' => 1202200327,
             'jurusan' => 'S1 Sistem Informasi',
             'jk' => 'Laki - laki',
-            'email' => 'dwi@student.telkomuniversity.ac.id',
-            'password' => bcrypt('dwi'),
+            'email' => 'dimas@student.telkomuniversity.ac.id',
+            'password' => bcrypt('dimas'),
+            'role' => 'mahasiswa',
+            'remember_token' =>  Str::random(60)
+        ]);
+        
+        DB::table('users')->insert([
+            'nama' => 'Maya Angelia Br Surbakti',
+            'nim' => 1202200150,
+            'jurusan' => 'S1 Sistem Informasi',
+            'jk' => 'Perempuan',
+            'email' => 'maya@student.telkomuniversity.ac.id',
+            'password' => bcrypt('maya'),
+            'role' => 'mahasiswa',
+            'remember_token' =>  Str::random(60)
+        ]);
+        
+        DB::table('users')->insert([
+            'nama' => 'Muhammad Habibi Akmal',
+            'nim' => 1202204284,
+            'jurusan' => 'S1 Sistem Informasi',
+            'jk' => 'Laki - laki',
+            'email' => 'habibi@student.telkomuniversity.ac.id',
+            'password' => bcrypt('habibi'),
+            'role' => 'mahasiswa',
+            'remember_token' =>  Str::random(60)
+        ]);
+        
+        DB::table('users')->insert([
+            'nama' => 'Ramya Anindita',
+            'nim' => 1202204223,
+            'jurusan' => 'S1 Sistem Informasi',
+            'jk' => 'Perempuan',
+            'email' => 'ramya@student.telkomuniversity.ac.id',
+            'password' => bcrypt('ramya'),
             'role' => 'mahasiswa',
             'remember_token' =>  Str::random(60)
         ]);
@@ -307,6 +340,22 @@ class UserSeeder extends Seeder
             'nama' => 'BTS',
             'email' => 'bts@ukm.telkomuniversity.ac.id',
             'password' => bcrypt('bts'),
+            'role' => 'ukm',
+            'remember_token' =>  Str::random(60)
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'UKMBali',
+            'email' => 'ukmbali@ukm.telkomuniversity.ac.id',
+            'password' => bcrypt('UKMBali'),
+            'role' => 'ukm',
+            'remember_token' =>  Str::random(60)
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'Al-Fath',
+            'email' => 'alfath@ukm.telkomuniversity.ac.id',
+            'password' => bcrypt('Alfath'),
             'role' => 'ukm',
             'remember_token' =>  Str::random(60)
         ]);
