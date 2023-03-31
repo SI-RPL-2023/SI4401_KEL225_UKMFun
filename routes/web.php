@@ -26,7 +26,8 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/', [AuthController::class, 'index'])->name('/');
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
-Route::group(['middleware' => ['auth', 'CekRole:mahasiswa,ukm']], function () {
+
+Route::group(['middleware' => ['auth', 'CekRole:mahasiswa, ukm']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
@@ -34,6 +35,7 @@ Route::group(['middleware' => ['auth', 'CekRole:mahasiswa,ukm']], function () {
 Route::group(['middleware' => ['auth', 'CekRole:mahasiswa']], function () {
     Route::get('/home', [ViewController::class, 'home'])->name('home');
 });
+
 // UKM VIEW
 Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/home-ukm', [ViewController::class, 'home_ukm'])->name('home-ukm');
