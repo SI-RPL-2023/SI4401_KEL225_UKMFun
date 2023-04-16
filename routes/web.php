@@ -39,4 +39,5 @@ Route::group(['middleware' => ['auth', 'CekRole:mahasiswa']], function () {
 // UKM VIEW
 Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/home-ukm', [ViewController::class, 'home_ukm'])->name('home-ukm');
+    Route::get('/edit', [ViewController::class, 'edit_ukm']);
 });
