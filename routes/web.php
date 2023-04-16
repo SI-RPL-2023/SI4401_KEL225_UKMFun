@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'CekRole:mahasiswa, ukm']], function () {
 // TELUTIZEN VIEW
 Route::group(['middleware' => ['auth', 'CekRole:mahasiswa']], function () {
     Route::get('/home', [ViewController::class, 'home'])->name('home');
+    Route::get('/ukm', [ViewController::class, 'ukm']);
 });
 
 // UKM VIEW
