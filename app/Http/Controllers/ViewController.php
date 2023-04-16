@@ -15,17 +15,12 @@ class ViewController extends Controller
     {
         return redirect()->route('index_telutizen');
     }
-
     public function ukm()
     {
-        // $pendaftaran = Pendaftaran::find(Auth::user()->id_user);
         $pendaftaran = Pendaftaran::where('id_mahasiswa', Auth::user()->id_user)->get();
-        // $ukm = User::find($pendaftaran->id_ukm);
-        // $title = 'About Us';
         if ($pendaftaran == null) {
             $pendaftaran = [];
         }
-        // dd($pe
         return view('telutizen.ukm', [
             'title' => 'UKM',
             'pendaftaran' => $pendaftaran

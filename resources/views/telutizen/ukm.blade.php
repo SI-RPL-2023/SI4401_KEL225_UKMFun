@@ -31,7 +31,7 @@
                                 <span class="text-primary">Belum dikonfirmasi</span>
                                 @endif
                             </td>
-                            <td scope="row">{{ $daftar->updated_at }}</th>
+                        <td scope="row">{{ $daftar->updated_at }}</th>
                     </tr>
                 @endforeach
             </tbody>
