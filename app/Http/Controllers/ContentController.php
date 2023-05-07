@@ -10,6 +10,27 @@ use Illuminate\Support\Facades\Auth;
 
 class ContentController extends Controller
 {
+    public function index_ukm()
+    {
+        $id_ukm = Auth::user()->id_user;
+        $contents = Content::where('id_ukm',  $id_ukm)->latest()->get();
+        $title = Auth::user()->nama;
+
+        // dd($contents->all());
+        if ($contents->all() === []) {
+            return view('ukm.home-ukm', ['error' => 'Content Belum Ditambahkan!'], compact('contents', 'title'));
+        } else {
+            $contents = $contents[0];
+        }
+
+
+        if ($contents != null && $contents->id_ukm ==  $id_ukm) {
+            return view('ukm.home-ukm', compact('contents', 'title'));
+        } else {
+            return view('ukm.home-ukm', ['error' => 'Content Belum Ditambahkan!'], compact('contents', 'title'));
+        }
+    }
+    
     public function index_telutizen()
     {
         $contents = Content::all();
