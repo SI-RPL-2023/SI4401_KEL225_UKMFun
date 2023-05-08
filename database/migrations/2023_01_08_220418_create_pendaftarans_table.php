@@ -29,14 +29,14 @@ return new class extends Migration
             $table->id('id_pendaftaran')->unsigned()->autoIncrement();
             $table->integer('id_mahasiswa');
             $table->integer('id_ukm');
-            $table->string('nama_ukm', 50);
+            $table->longText('nama_ukm');
             $table->string('nama', 255);
             $table->integer('nim')->length(50);
             $table->string('jurusan', 255);
             $table->string('jk', 255);
             $table->string('alamat', 2000);
             $table->string('email');
-            $table->integer('no_hp')->length(50);
+            $table->longText('no_hp');
             $table->string('ksm', 255);
             $table->string('khs', 255);
             $table->string('cv', 255);
