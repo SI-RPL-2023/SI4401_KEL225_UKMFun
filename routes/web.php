@@ -48,4 +48,10 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/event', [ViewController::class, 'event'])->name('event');
     Route::get('index-event', [EventController::class, 'index'])->name('index-event');
     Route::post('/add-event', [EventController::class, 'store'])->name('events.store');
+
+// GENERAL ADMIN VIEW
+Route::group(['middleware' => ['auth', 'CekRole:general admin']], function () {
+    Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('edit-pengaturan',[PengaturanController::class,'index'])->name('pengaturan.index');
+    Route::post('edit-pengaturan',[PengaturanController::class,'update'])->name('pengaturan.update');
 });
