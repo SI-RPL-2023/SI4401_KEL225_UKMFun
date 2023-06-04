@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth', 'CekRole:mahasiswa, ukm']], function () {
 Route::group(['middleware' => ['auth', 'CekRole:mahasiswa']], function () {
     Route::get('/home', [ViewController::class, 'home'])->name('home');
     Route::get('/ukm', [ViewController::class, 'ukm']);
+    Route::get('/event', [ViewController::class, 'event']);
     Route::get('/about', [ViewController::class, 'about']);
     Route::get('detail-ukm/{id_ukm}', [ContentController::class, 'detail_ukm']); 
 });
@@ -44,4 +45,7 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/home-ukm', [ViewController::class, 'home_ukm'])->name('home-ukm');
     Route::get('/edit', [ViewController::class, 'edit_ukm']);
     Route::get('/index_ukm', [ContentController::class, 'index_ukm'])->name('index_ukm');
+    Route::get('/event', [ViewController::class, 'event'])->name('event');
+    Route::get('index-event', [EventController::class, 'index'])->name('index-event');
+    Route::post('/add-event', [EventController::class, 'store'])->name('events.store');
 });

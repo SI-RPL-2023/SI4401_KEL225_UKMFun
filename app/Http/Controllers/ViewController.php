@@ -46,6 +46,11 @@ class ViewController extends Controller
     }
 
     // UKM VIEW
+    public function event()
+    {
+        return redirect()->route('index-event');
+    }
+
     public function home_ukm()
     {
         return redirect()->route('index_ukm');
