@@ -47,7 +47,8 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/event', [ViewController::class, 'event'])->name('event');
     Route::get('index-event', [EventController::class, 'index'])->name('index-event');
     Route::post('/add-event', [EventController::class, 'store'])->name('events.store');
-
+    Route::get('terima/{id_pendaftaran}', [PendaftaranController::class, 'terima']);
+    Route::get('tolak/{id_pendaftaran}', [PendaftaranController::class, 'tolak']);
 });
 
 // GENERAL ADMIN VIEW
