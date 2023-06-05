@@ -52,8 +52,10 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
 
 // GENERAL ADMIN VIEW
 Route::group(['middleware' => ['auth', 'CekRole:general admin']], function () {
-    
-    // users
+
+    Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('edit-pengaturan',[PengaturanController::class,'index'])->name('pengaturan.index');
+    Route::post('edit-pengaturan',[PengaturanController::class,'update'])->name('pengaturan.update');
     Route::get('users',[UserController::class,'index'])->name('users.index');
     Route::get('users/download-sampel-import',[UserController::class,'downloadSampelImport'])->name('users.download-sampel-import');
     Route::post('users',[UserController::class,'import'])->name('users.import');
