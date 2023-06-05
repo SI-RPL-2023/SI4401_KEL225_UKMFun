@@ -351,6 +351,13 @@ class UserSeeder extends Seeder
             'role' => 'ukm',
             'remember_token' =>  Str::random(60)
         ]);
+        DB::table('users')->insert([
+            'nama' => 'General Admin',
+            'email' => 'generaladmin@gmail.com',
+            'password' => bcrypt('password'),
+            'role' => 'general admin',
+            'remember_token' =>  Str::random(60)
+        ]);
 
         DB::table('users')->insert([
             'nama' => 'Al-Fath',
