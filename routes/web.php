@@ -44,6 +44,10 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/home-ukm', [ViewController::class, 'home_ukm'])->name('home-ukm');
     Route::get('/edit', [ViewController::class, 'edit_ukm']);
     Route::get('/index_ukm', [ContentController::class, 'index_ukm'])->name('index_ukm');
+    Route::get('/event', [ViewController::class, 'event'])->name('event');
+    Route::get('index-event', [EventController::class, 'index'])->name('index-event');
+    Route::post('/add-event', [EventController::class, 'store'])->name('events.store');
+
 });
 
 // GENERAL ADMIN VIEW
