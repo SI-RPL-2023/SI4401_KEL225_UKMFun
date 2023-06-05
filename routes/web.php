@@ -45,3 +45,12 @@ Route::group(['middleware' => ['auth', 'CekRole:ukm']], function () {
     Route::get('/edit', [ViewController::class, 'edit_ukm']);
     Route::get('/index_ukm', [ContentController::class, 'index_ukm'])->name('index_ukm');
 });
+
+// GENERAL ADMIN VIEW
+Route::group(['middleware' => ['auth', 'CekRole:general admin']], function () {
+    
+    // users
+    Route::get('users',[UserController::class,'index'])->name('users.index');
+    Route::get('users/download-sampel-import',[UserController::class,'downloadSampelImport'])->name('users.download-sampel-import');
+    Route::post('users',[UserController::class,'import'])->name('users.import');
+});

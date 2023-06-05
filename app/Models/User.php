@@ -29,8 +29,9 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'status'
     ];
-    
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -49,4 +50,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function status()
+    {
+        if($this->status)
+        {
+            if($this->status === 'aktif')
+            {
+                return '<span class="btn btn-info">Aktif</span>';
+            }else{
+                return '<span class="btn btn-success">Alumni</span>';
+            }
+        }
+        else{
+            return '-';
+        }
+    }
 }
